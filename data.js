@@ -1,4 +1,4 @@
-export const ProvincesJSON = [
+module.exports.ProvincesJSON = ProvincesJSON = [
   {
     code: 1,
     city: "آذربایجان شرقی",
@@ -120,7 +120,7 @@ export const ProvincesJSON = [
     city: "اصفهان",
   },
 ];
-export const NationalIdJSON = [
+module.exports.NationalIdJSON = NationalIdJSON = [
   {
     code: "169",
     city: "آذرشهر",
@@ -2507,7 +2507,7 @@ export const NationalIdJSON = [
     parentCode: 30,
   },
 ];
-export const banks = [
+module.exports.banks = banks = [
   {
     name: "بانک آینده",
     code: "636214",

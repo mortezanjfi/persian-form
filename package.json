@@ -1,0 +1,57 @@
+{
+  "name": "persianform",
+  "version": "1.0.0",
+  "description": "Simple functions for validating persian forms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mortezanjfi/persian-form.git"
+  },
+  "keywords": [
+    "persianForm",
+    "persian",
+    "form",
+    "validating",
+    "persianFormValidation",
+    "persianValidation",
+    "validation",
+    "postal-code",
+    "post",
+    "code",
+    "gpa",
+    "avverage",
+    "english",
+    "address",
+    "duplicate",
+    "sheba",
+    "card",
+    "number",
+    "bank",
+    "getBank",
+    "getBankFrom",
+    "CardNumber",
+    "place",
+    "getPlace",
+    "getPlaceFromNationalCode",
+    "isPostalCode",
+    "isGpa",
+    "isMobilePhone",
+    "isPersian",
+    "isEnglish",
+    "isAddress",
+    "isDuplicate",
+    "isSheba",
+    "isCardNumber",
+    "getBankFromCardNumber",
+    "getPlaceByNationalCode"
+  ],
+  "author": "Morteza Najafi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mortezanjfi/persian-form/issues"
+  },
+  "homepage": "https://github.com/mortezanjfi/persian-form#readme"
+}
