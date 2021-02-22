@@ -72,6 +72,20 @@ export const isMobilePhone = (num) => {
   }
 };
 
+export const isHomePhone = (num) => {
+  if (!num || !isNumber(num)) return false;
+  else {
+    const regex = /^0\d{2,3}\d{8}$/;
+    if (regex.test(num)) {
+      return true;
+    } else if (num === null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+};
+
 export const isNationalCode = (num) => {
   if (!num || !isNumber(num)) return false;
   else {

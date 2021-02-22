@@ -15,6 +15,7 @@ import { persianForm } from 'persianForm'
 persianForm.isPostalCode = (num) //return true or false
 persianForm.isGpa = (str) //return true or false
 persianForm.isMobilePhone = (num) //return true or false
+persianForm.isHomePhone = (num) //return true or false
 persianForm.isNationalCode = (num) //return true or false
 persianForm.isPersian = (str, {isNumber: Boolean}) //return true or false
 persianForm.isEnglish = (str, {isNumber: Boolean}) //return true or false
