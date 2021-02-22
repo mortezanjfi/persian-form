@@ -1,8 +1,8 @@
-import { isString, isNumber, validSheba } from "./helper";
+import { isString, validSheba } from "./helper";
 import { banks, NationalIdJSON, ProvincesJSON } from "./data";
 
 export const isPostalCode = (num) => {
-  if (!num || !isNumber(num)) return false;
+  if (!num) return false;
   else {
     const regex = /^(\d[3-9|1]{4}-?\d[3-9|1]{4})$/;
     let arr = [];
@@ -32,7 +32,7 @@ export const isPostalCode = (num) => {
 };
 
 export const isGpa = (str) => {
-  if (!str || !isString(str)) return false;
+  if (!str) return false;
   else {
     let regex = null;
     let arr = str.split("");
@@ -61,7 +61,7 @@ export const isGpa = (str) => {
 };
 
 export const isMobilePhone = (num) => {
-  if (!num || !isNumber(num)) return false;
+  if (!num) return false;
   else {
     const regex = /^(0)9[0-99]\d[\-\s]?\d{3}[\-\s]?\d{4}$/;
     if (regex.test(num)) {
@@ -75,7 +75,7 @@ export const isMobilePhone = (num) => {
 };
 
 export const isHomePhone = (num) => {
-  if (!num || !isNumber(num)) return false;
+  if (!num) return false;
   else {
     const regex = /^0\d{2,3}\d{8}$/;
     if (regex.test(num)) {
@@ -89,7 +89,7 @@ export const isHomePhone = (num) => {
 };
 
 export const isNationalCode = (num) => {
-  if (!num || !isNumber(num)) return false;
+  if (!num) return false;
   else {
     if (!num.match(/^\d{10}$/)) return false;
     num = ("0000" + num).substr(num.length + 4 - 10);
@@ -107,7 +107,7 @@ export const isNationalCode = (num) => {
 };
 
 export const isPersian = (str, option = { isNumber: true }) => {
-  if (!str || !isString(str)) return false;
+  if (!str) return false;
   else {
     const regex = new RegExp(
       `^[\\u0600-\\u06FF\\uFB8A\\u067E\\u0686\\u06AF${
@@ -127,7 +127,7 @@ export const isPersian = (str, option = { isNumber: true }) => {
 };
 
 export const isEnglish = (str, option = { isNumber: true }) => {
-  if (!str || !isString(str) || str.split("")[0] === /\s/) return false;
+  if (!str || str.split("")[0] === /\s/) return false;
   else {
     const regex = new RegExp(
       `^[A-Za-z${option.isNumber ? "\\d" : null}]( ?[A-Za-z${
@@ -145,7 +145,7 @@ export const isEnglish = (str, option = { isNumber: true }) => {
 };
 
 export const isAddress = (str, option = { maxNumber: 3 }) => {
-  if (!str || !isString(str)) return false;
+  if (!str) return false;
   else {
     let arr = [];
     arr.push(str.split(""));
@@ -162,7 +162,7 @@ export const isAddress = (str, option = { maxNumber: 3 }) => {
 };
 
 export const isDuplicate = (str, option = { maxDuplicate: 3 }) => {
-  if (!str || !isString(str)) return false;
+  if (!str) return false;
   else {
     const regex = new RegExp(`^(?:(.)(?!\\1{${option.maxDuplicate}}))+$`);
     if (regex.test(str)) {
@@ -176,7 +176,7 @@ export const isDuplicate = (str, option = { maxDuplicate: 3 }) => {
 };
 
 export const isSheba = (str) => {
-  if (!str || !isString(str)) return false;
+  if (!str) return false;
   else {
     var pattern = /[0-9]{24}/;
     if (str.length !== 24) {
@@ -197,7 +197,7 @@ export const isSheba = (str) => {
 };
 
 export const isCardNumber = (num) => {
-  if (!num || !isNumber(num)) return false;
+  if (!num) return false;
   else {
     const numResult = "" + num;
     const length = numResult.length;
@@ -220,7 +220,7 @@ export const isCardNumber = (num) => {
 };
 
 export const getBankNameFromCardNumber = (num) => {
-  if (!num || !isNumber(num)) return false;
+  if (!num) return false;
   else {
     if (num && num.toString().length === 16) {
       const code = num.toString().substr(0, 6);
@@ -237,7 +237,7 @@ export const getBankNameFromCardNumber = (num) => {
 };
 
 export const getPlaceByNationalCode = (num) => {
-  if (!num || !isNumber(num)) return false;
+  if (!num) return false;
   else {
     if (num && num.length === 10) {
       const code = num.toString().substring(0, 3);
