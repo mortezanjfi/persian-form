@@ -10,7 +10,9 @@ Validate persian forms just with simple function!
 Then..
 
 ```
-import { persianForm } from 'persianForm'
+import * as persianForm from 'persianForm'
+//or
+import { isPostalCode, ... } from 'persianForm'
 
 persianForm.isPostalCode = (str) //return true or false
 persianForm.isGpa = (str) //return true or false
