@@ -1,13 +1,13 @@
 import { isString, isNumber, validSheba } from "./helper";
 import { banks, NationalIdJSON, ProvincesJSON } from "./data";
 
-export const isPostalCode = (str) => {
-  if (!str || !isNumber(str)) return false;
+export const isPostalCode = (num) => {
+  if (!num || !isNumber(num)) return false;
   else {
     const regex = /^(\d[3-9|1]{4}-?\d[3-9|1]{4})$/;
     let arr = [];
     let repeatChar = false;
-    arr.push(str.split(""));
+    arr.push(num.split(""));
     arr = arr[0];
     for (let i = 0; i <= arr.length; i++) {
       if (i <= 3) {
@@ -23,7 +23,7 @@ export const isPostalCode = (str) => {
         }
       }
     }
-    if (regex.test(str) && !repeatChar) {
+    if (regex.test(num) && !repeatChar) {
       return true;
     } else {
       return false;
@@ -58,13 +58,13 @@ export const isGpa = (str) => {
   }
 };
 
-export const isMobilePhone = (str) => {
-  if (!str || !isNumber(str)) return false;
+export const isMobilePhone = (num) => {
+  if (!num || !isNumber(num)) return false;
   else {
     const regex = /^(0)9[0-99]\d[\-\s]?\d{3}[\-\s]?\d{4}$/;
-    if (regex.test(str)) {
+    if (regex.test(num)) {
       return true;
-    } else if (str === null) {
+    } else if (num === null) {
       return true;
     } else {
       return false;
@@ -72,16 +72,16 @@ export const isMobilePhone = (str) => {
   }
 };
 
-export const isNationalCode = (str) => {
-  if (!str || !isNumber(str)) return false;
+export const isNationalCode = (num) => {
+  if (!num || !isNumber(num)) return false;
   else {
-    if (!str.match(/^\d{10}$/)) return false;
-    str = ("0000" + str).substr(str.length + 4 - 10);
-    if (parseInt(str.substr(3, 6), 10) === 0) return false;
-    const lastNumber = parseInt(str.substr(9, 1), 10);
+    if (!num.match(/^\d{10}$/)) return false;
+    num = ("0000" + num).substr(num.length + 4 - 10);
+    if (parseInt(num.substr(3, 6), 10) === 0) return false;
+    const lastNumber = parseInt(num.substr(9, 1), 10);
     let sum = 0;
     for (let i = 0; i < 9; i++) {
-      sum += parseInt(str.substr(i, 1), 10) * (10 - i);
+      sum += parseInt(num.substr(i, 1), 10) * (10 - i);
     }
     sum = sum % 11;
     return (
@@ -180,10 +180,10 @@ export const isSheba = (str) => {
   }
 };
 
-export const isCardNumber = (str) => {
-  if (!str || !isNumber(str)) return false;
+export const isCardNumber = (num) => {
+  if (!num || !isNumber(num)) return false;
   else {
-    const numResult = "" + str;
+    const numResult = "" + num;
     const length = numResult.length;
     if (
       length < 16 ||
@@ -203,11 +203,11 @@ export const isCardNumber = (str) => {
   }
 };
 
-export const getBankNameFromCardNumber = (str) => {
-  if (!str || !isNumber(str)) return false;
+export const getBankNameFromCardNumber = (num) => {
+  if (!num || !isNumber(num)) return false;
   else {
-    if (str && str.toString().length === 16) {
-      const code = str.toString().substr(0, 6);
+    if (num && num.toString().length === 16) {
+      const code = num.toString().substr(0, 6);
       const findBank = banks.find((bank) => bank.code === code);
       if (findBank) {
         return findBank.name;
@@ -220,11 +220,11 @@ export const getBankNameFromCardNumber = (str) => {
   }
 };
 
-export const getPlaceByNationalCode = (str) => {
-  if (!str || !isNumber(str)) return false;
+export const getPlaceByNationalCode = (num) => {
+  if (!num || !isNumber(num)) return false;
   else {
-    if (str && str.length === 10) {
-      const code = str.toString().substring(0, 3);
+    if (num && num.length === 10) {
+      const code = num.toString().substring(0, 3);
       const find = NationalIdJSON.filter((row) =>
         row.code.toString().includes(code)
       );
