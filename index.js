@@ -48,12 +48,14 @@ export const isGpa = (str) => {
     } else if (arr.length === 2 && arr[0] === 2 && arr[1] === 0) {
       regex = /^[2]{1}[0]{1}$/g;
     }
-    if (regex?.test(str)) {
-      return true;
-    } else if (str === null) {
-      return true;
-    } else {
-      return false;
+    if (regex) {
+      if (regex.test(str)) {
+        return true;
+      } else if (str === null) {
+        return true;
+      } else {
+        return false;
+      }
     }
   }
 };
