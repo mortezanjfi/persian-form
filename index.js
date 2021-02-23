@@ -1,5 +1,16 @@
-import { isString, validSheba } from "./helper";
+import { validSheba } from "./helper";
 import { banks, NationalIdJSON, ProvincesJSON } from "./data";
+
+export const isValidFile = (file) => {
+  if (!file) return false;
+  else {
+    if (file.size > 256 || file.size < 320) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+};
 
 export const isPostalCode = (num) => {
   if (!num) return false;

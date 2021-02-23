@@ -4,8 +4,8 @@ Validate persian forms just with simple function!
 
 # installation
 
-`npm i persian-form --save`
-`yarn add persian-form`
+`npm i persianform --save`
+`yarn add persianform`
 
 Then..
 
@@ -14,21 +14,20 @@ import * as persianForm from 'persianForm'
 //or
 import { isPostalCode, ... } from 'persianForm'
 
-persianForm.isPostalCode = (str) //return true or false
-persianForm.isGpa = (str) //return true or false
 persianForm.isMobilePhone = (str) //return true or false
 persianForm.isHomePhone = (str) //return true or false
+persianForm.isPostalCode = (str) //return true or false
+persianForm.isGpa = (str) //return true or false
 persianForm.isNationalCode = (str) //return true or false
-persianForm.isPersian = (str, {isNumber: Boolean}) //return true or false
-persianForm.isEnglish = (str, {isNumber: Boolean}) //return true or false
 persianForm.isAddress = (str, {maxNumber: Number}) //return true or false
-persianForm.isDuplicate = (str, {maxDuplicate: Number}) //return true or false
 persianForm.isSheba = (str) //return true or false
 persianForm.isCardNumber = (str) //return true or false
+persianForm.isPersian = (str, {isNumber: Boolean}) //return true or false
+persianForm.isEnglish = (str, {isNumber: Boolean}) //return true or false
+persianForm.isDuplicate = (str, {maxDuplicate: Number}) //return true or false
+persianForm.isValidFile = (file) //return true or false
 persianForm.getBankNameFromCardNumber = (str) //return bank name as String
 persianForm.getPlaceByNationalCode = (str) //return born place as String
-
-
 ```
 
 # option

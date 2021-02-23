@@ -1,13 +1,3 @@
-export const isString = (input) => {
-  if (typeof input === "string") {
-    return true;
-  }
-};
-export const isNumber = (input) => {
-  if (typeof input === "number") {
-    return true;
-  }
-};
 export const validSheba = (str) => {
   var remainder = str,
     block;
