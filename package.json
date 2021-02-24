@@ -1,6 +1,6 @@
 {
   "name": "persianform",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Simple functions for validating persian forms",
   "main": "index.js",
   "scripts": {
