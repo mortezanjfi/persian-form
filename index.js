@@ -4,7 +4,7 @@ import { banks, NationalIdJSON, ProvincesJSON } from "./data";
 export const isValidFile = (file) => {
   if (!file) return false;
   else {
-    if (file.size > 256 || file.size < 320) {
+    if (file.size < 3000) {
       return false;
     } else {
       return true;
@@ -75,6 +75,7 @@ export const isGpa = (str) => {
 export const isMobilePhone = (num) => {
   if (!num) return false;
   else {
+    num = "0" + num;
     let strNum = num.toString();
     const regex = /^(0)9[0-99]\d[\-\s]?\d{3}[\-\s]?\d{4}$/;
     if (regex.test(strNum)) {
@@ -90,6 +91,7 @@ export const isMobilePhone = (num) => {
 export const isHomePhone = (num) => {
   if (!num) return false;
   else {
+    num = "0" + num;
     let strNum = num.toString();
     const regex = /^0\d{2,3}\d{8}$/;
     if (regex.test(strNum)) {
