@@ -19,15 +19,17 @@ persianForm.isHomePhone = (str) //return true or false
 persianForm.isPostalCode = (str) //return true or false
 persianForm.isGpa = (str) //return true or false
 persianForm.isNationalCode = (str) //return true or false
-persianForm.isAddress = (str, {maxNumber: Number}) //return true or false
 persianForm.isSheba = (str) //return true or false
 persianForm.isCardNumber = (str) //return true or false
+persianForm.getBankNameFromCardNumber = (str) //return bank name as String
+persianForm.getPlaceByNationalCode = (str) //return born place as String
+persianForm.isValidFile = (file) //return true or false
+
+<!-- with options -->
 persianForm.isPersian = (str, {isNumber: Boolean}) //return true or false
 persianForm.isEnglish = (str, {isNumber: Boolean}) //return true or false
 persianForm.isDuplicate = (str, {maxDuplicate: Number}) //return true or false
-persianForm.isValidFile = (file) //return true or false
-persianForm.getBankNameFromCardNumber = (str) //return bank name as String
-persianForm.getPlaceByNationalCode = (str) //return born place as String
+persianForm.isAddress = (str, {maxNumber: Number}) //return true or false
 ```
 
 # option

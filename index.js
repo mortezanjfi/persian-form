@@ -12,14 +12,13 @@ export const isValidFile = (file) => {
   }
 };
 
-export const isPostalCode = (num) => {
-  if (!num) return false;
+export const isPostalCode = (str) => {
+  if (!str) return false;
   else {
-    let strNum = num.toString();
     const regex = /^(\d[3-9|1]{4}-?\d[3-9|1]{4})$/;
     let arr = [];
     let repeatChar = false;
-    arr.push(strNum.split(""));
+    arr.push(str.split(""));
     arr = arr[0];
     for (let i = 0; i <= arr.length; i++) {
       if (i <= 3) {
@@ -35,7 +34,7 @@ export const isPostalCode = (num) => {
         }
       }
     }
-    if (regex.test(strNum) && !repeatChar) {
+    if (regex.test(str) && !repeatChar) {
       return true;
     } else {
       return false;
@@ -72,15 +71,13 @@ export const isGpa = (str) => {
   }
 };
 
-export const isMobilePhone = (num) => {
-  if (!num) return false;
+export const isMobilePhone = (str) => {
+  if (!str) return false;
   else {
-    num = "0" + num;
-    let strNum = num.toString();
     const regex = /^(0)9[0-99]\d[\-\s]?\d{3}[\-\s]?\d{4}$/;
-    if (regex.test(strNum)) {
+    if (regex.test(str)) {
       return true;
-    } else if (strNum === null) {
+    } else if (str === null) {
       return true;
     } else {
       return false;
@@ -88,15 +85,13 @@ export const isMobilePhone = (num) => {
   }
 };
 
-export const isHomePhone = (num) => {
-  if (!num) return false;
+export const isHomePhone = (str) => {
+  if (!str) return false;
   else {
-    num = "0" + num;
-    let strNum = num.toString();
     const regex = /^0\d{2,3}\d{8}$/;
-    if (regex.test(strNum)) {
+    if (regex.test(str)) {
       return true;
-    } else if (strNum === null) {
+    } else if (str === null) {
       return true;
     } else {
       return false;
@@ -104,17 +99,16 @@ export const isHomePhone = (num) => {
   }
 };
 
-export const isNationalCode = (num) => {
-  if (!num) return false;
+export const isNationalCode = (str) => {
+  if (!str) return false;
   else {
-    let strNum = num.toString();
-    if (!strNum.match(/^\d{10}$/)) return false;
-    strNum = ("0000" + strNum).substr(strNum.length + 4 - 10);
-    if (parseInt(strNum.substr(3, 6), 10) === 0) return false;
-    const lastNumber = parseInt(strNum.substr(9, 1), 10);
+    if (!str.match(/^\d{10}$/)) return false;
+    str = ("0000" + str).substr(str.length + 4 - 10);
+    if (parseInt(str.substr(3, 6), 10) === 0) return false;
+    const lastNumber = parseInt(str.substr(9, 1), 10);
     let sum = 0;
     for (let i = 0; i < 9; i++) {
-      sum += parseInt(strNum.substr(i, 1), 10) * (10 - i);
+      sum += parseInt(str.substr(i, 1), 10) * (10 - i);
     }
     sum = sum % 11;
     return (
@@ -192,21 +186,20 @@ export const isDuplicate = (str, option = { maxDuplicate: 3 }) => {
   }
 };
 
-export const isSheba = (num) => {
-  if (!num) return false;
+export const isSheba = (str) => {
+  if (!str) return false;
   else {
-    let strNum = num.toString();
     var pattern = /[0-9]{24}/;
-    if (strNum.length !== 24) {
+    if (str.length !== 24) {
       return false;
     }
-    if (!pattern.test(strNum)) {
+    if (!pattern.test(str)) {
       return false;
     }
-    var newStr = strNum.substr(4);
-    var d1 = strNum.charCodeAt(0) - 65 + 10;
-    var d2 = strNum.charCodeAt(1) - 65 + 10;
-    newStr += d1.toString() + d2.toString() + strNum.substr(2, 2);
+    var newStr = str.substr(4);
+    var d1 = str.charCodeAt(0) - 65 + 10;
+    var d2 = str.charCodeAt(1) - 65 + 10;
+    newStr += d1.toString() + d2.toString() + str.substr(2, 2);
     if (!validSheba(newStr)) {
       return false;
     }
@@ -214,11 +207,10 @@ export const isSheba = (num) => {
   }
 };
 
-export const isCardNumber = (num) => {
-  if (!num) return false;
+export const isCardNumber = (str) => {
+  if (!str) return false;
   else {
-    let strNum = num.toString();
-    const numResult = "" + strNum;
+    const numResult = "" + str;
     const length = numResult.length;
     if (
       length < 16 ||
@@ -238,12 +230,11 @@ export const isCardNumber = (num) => {
   }
 };
 
-export const getBankNameFromCardNumber = (num) => {
-  if (!num) return false;
+export const getBankNameFromCardNumber = (str) => {
+  if (!str) return false;
   else {
-    let strNum = num.toString();
-    if (strNum && strNum.toString().length === 16) {
-      const code = strNum.toString().substr(0, 6);
+    if (str && str.toString().length === 16) {
+      const code = str.toString().substr(0, 6);
       const findBank = banks.find((bank) => bank.code === code);
       if (findBank) {
         return findBank.name;
@@ -256,12 +247,11 @@ export const getBankNameFromCardNumber = (num) => {
   }
 };
 
-export const getPlaceByNationalCode = (num) => {
-  if (!num) return false;
+export const getPlaceByNationalCode = (str) => {
+  if (!str) return false;
   else {
-    let strNum = num.toString();
-    if (strNum && strNum.length === 10) {
-      const code = strNum.toString().substring(0, 3);
+    if (str && str.length === 10) {
+      const code = str.toString().substring(0, 3);
       const find = NationalIdJSON.filter((row) =>
         row.code.toString().includes(code)
       );
