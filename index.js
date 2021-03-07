@@ -75,9 +75,9 @@ export const isGpa = (str) => {
 export const isMobilePhone = (num) => {
   if (!num) return false;
   else {
-    num = "0" + num;
+    // num = "0" + num;
     let strNum = num.toString();
-    const regex = /^(0)9[0-99]\d[\-\s]?\d{3}[\-\s]?\d{4}$/;
+    const regex = /^09\d{9}$/;
     if (regex.test(strNum)) {
       return true;
     } else if (strNum === null) {
