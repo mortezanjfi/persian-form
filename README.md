@@ -29,6 +29,7 @@ persianForm.isValidFile(file) //return true or false
 <!-- with options -->
 persianForm.isPersian(str, {isNumber: Boolean}) //return true or false
 persianForm.isEnglish(str, {isNumber: Boolean}) //return true or false
+persianForm.isPassword(str) //return true or false
 persianForm.isDuplicate(str, {maxDuplicate: Number}) //return true or false
 persianForm.isAddress(str, {maxNumber: Number}) //return true or false
 ```
