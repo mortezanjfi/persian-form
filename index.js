@@ -161,6 +161,22 @@ export const isEnglish = (str, option = { isNumber: true }) => {
   }
 };
 
+export const isPassword = (str) => {
+  if (!str) return false;
+  else {
+    const regex = new RegExp(
+      /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/
+    );
+    if (regex.test(str)) {
+      return true;
+    } else if (str === null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+};
+
 export const isAddress = (str, option = { maxNumber: 3 }) => {
   if (!str) return false;
   else {
