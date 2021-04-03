@@ -10,9 +10,9 @@ Validate persian forms just with simple function!
 Then..
 
 ```
-import * as persianForm from 'persianForm'
+import * as persianForm from 'persianform'
 //or
-import { isPostalCode, ... } from 'persianForm'
+import { isPostalCode, ... } from 'persianform'
 
 <!-- simple options -->
 persianForm.isMobilePhone(str) //return true or false
@@ -24,6 +24,7 @@ persianForm.isSheba(str) //return true or false
 persianForm.isCardNumber(str) //return true or false
 persianForm.getBankNameFromCardNumber(str) //return bank name as String
 persianForm.getPlaceByNationalCode(str) //return born place as String
+persianForm.isEmail(str) //return true or false
 persianForm.isValidFile(file) //return true or false
 
 <!-- with options -->

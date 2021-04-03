@@ -177,6 +177,20 @@ export const isPassword = (str) => {
   }
 };
 
+export const isEmail = (str) => {
+  if (!str) return false;
+  else {
+    const regex = new RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/);
+    if (regex.test(str)) {
+      return true;
+    } else if (str === null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+};
+
 export const isAddress = (str, option = { maxNumber: 3 }) => {
   if (!str) return false;
   else {
