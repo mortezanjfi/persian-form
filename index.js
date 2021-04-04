@@ -147,7 +147,7 @@ export const isEnglish = (str, option = { isNumber: true }) => {
   if (!str || str.split("")[0] === /\s/) return false;
   else {
     const regex = new RegExp(
-      `^[A-Za-z${option.isNumber ? "\\d" : null}]( ?[A-Za-z${
+      `^[A-Za-z.@${option.isNumber ? "\\d" : null}]( ?[A-Za-z.@${
         option.isNumber ? "\\d" : null
       }] ?)*$`
     );
