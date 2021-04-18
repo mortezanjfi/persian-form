@@ -91,7 +91,6 @@ export const isMobilePhone = (num) => {
 export const isHomePhone = (num) => {
   if (!num) return false;
   else {
-    num = "0" + num;
     let strNum = num.toString();
     const regex = /^0\d{2,3}\d{8}$/;
     if (regex.test(strNum)) {
