@@ -102,6 +102,19 @@ export const isHomePhone = (num) => {
   }
 };
 
+export const isFax = (num) => {
+  if (!num) return true;
+  else {
+    let strNum = num?.toString();
+    const regex = /^0\d{2}\d{8}$/;
+    if (regex.test(strNum)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+};
+
 export const isNationalCode = (num) => {
   if (!num) return false;
   else {
